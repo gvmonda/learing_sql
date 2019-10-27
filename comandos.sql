@@ -18,7 +18,8 @@ WHERE id = 4;
 DELETE FROM table_name -- Deleta todas as linhas em que a entrada de uma coluna é vazia ( ou um valor específico)
 WHERE column_name IS NULL;
 
-***Constraints***
+--Constraints!
+
 CREATE TABLE table_name ( 
 column_name1 INTEGER PRIMARY KEY, -- PRIMARY KEY define uma coluna de identificação, impedindo duas linhas de terem o mesmo "id"
 column_name2 TEXT UNIQUE, -- UNIQUE define informações que devem ser únicas, não podem se repetir nas colunas. Pode ser nulo, diferente de PK
