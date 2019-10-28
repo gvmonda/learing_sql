@@ -27,3 +27,38 @@ column_name3 TEXT NOT NULL, --  NOT NULL, não pode ser nulo
 column_name4 TEXT DEFAULT 'This is a default text' -- Define uma entrada padrão para quando a entrada for nula
 );
 
+SELECT DISTINCT name FROM table_name -- Retorna valores distintos
+
+SELECT * 
+FROM movies
+WHERE name LIKE 'Se_en'; -- Comando LIKE busca nomes parecidos com citado, no exemplo busca nomes que começam com Se e terminam em en
+
+SELECT * FROM table_name WHERE name LIKE 'A%' --Seleciona todos os nomes que começam com 'A'
+SELECT * FROM table_name WHERE name LIKE '%a' --Seleciona todos os nomes que terminam com 'a'
+SELECT * FROM table_name WHERE name LIKE '%palavra%' --Seleciona todos os nomes que contém 'palavra'
+
+SELECT * -- Comando BETWEEN retorna linhas que satisfazem um intervalo. Pode ser usado para TEXT também.
+FROM table
+WHERE column_name BETWEEN '1' AND '10';
+
+SELECT * FROM table_name ORDER BY name; --Exibe linhas ordenadas de acordo com as entradas de uma coluna
+SELECT * FROM table_name ORDER BY name DESC; --Mesma coisa, só que decrescente
+SELECT * FROM table_name ORDER BY name ASC, year DESC; --Ordena por name ascendendo, depois ordena os q tem valores iguais por ano descendente
+
+SELECT * FROM table_name LIMIT 10; --Define um limite para o número de linhas retornados (sempre vai no final da query)
+
+SELECT name,       --Comando CASE, estilo if-then, permite usar condicionais, exemplo do codecademy
+ CASE
+  WHEN imdb_rating > 8 THEN 'Fantastic'
+  WHEN imdb_rating > 6 THEN 'Poorly Received'
+  ELSE 'Avoid at All Costs'
+ END
+FROM movies;
+
+SELECT COUNT(*) FROM table_name; --Conta linhas
+SELECT SUM(column_name) FROM table_name; --Soma entradas
+SELECT MAX(column_name) FROM table_name; --Retorna valor máximo, análogo MIN
+SELECT AVG(column_name) FROM table_name; --Retorna média
+
+
+
