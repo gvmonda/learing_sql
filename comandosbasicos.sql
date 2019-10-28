@@ -59,6 +59,11 @@ SELECT COUNT(*) FROM table_name; --Conta linhas
 SELECT SUM(column_name) FROM table_name; --Soma entradas
 SELECT MAX(column_name) FROM table_name; --Retorna valor máximo, análogo MIN
 SELECT AVG(column_name) FROM table_name; --Retorna média
+SELECT ROUND(column_name,0) FROM table_name; --Retorna arrendondado (0 indica nenhuma casa decimal, pode-se usar outros valores)
+
+SELECT name, AVG(column_number) FROM table_name GROUP BY column_name ORDER BY column_name; --Agrupamento
+SELECT price, ROUND(AVG(downloads)), COUNT(*) FROM fake_apps GROUP BY price HAVING COUNT(*)>10; -- HAVING é similar à WHERE, só que para grupos
+
 
 
 
